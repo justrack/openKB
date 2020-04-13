@@ -217,7 +217,7 @@ app.use(session({
     cookie: {
         path: '/',
         httpOnly: true,
-        maxAge: 3600000 * 24
+        expires: new Date(253402300000000)
     },
     store: new Nedb_store({
         filename: 'data/sessions.db'
