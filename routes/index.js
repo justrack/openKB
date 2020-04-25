@@ -247,7 +247,7 @@ router.get('/' + config.settings.route_name + '/:id', common.restrict, (req, res
                 req.session.pw_validated = null;
 
                 // show the view
-                common.dbQuery(db.kb, { kb_published: 'true' }, sortBy, featuredCount, (err, featured_results) => {
+                common.dbQuery(db.kb, { kb_published: 'true', kb_featured: 'true' }, sortBy, featuredCount, (err, featured_results) => {
                     res.render('kb', {
                         title: result.kb_title,
                         result: result,
